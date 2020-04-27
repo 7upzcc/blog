@@ -12,3 +12,11 @@ spring:
     username: root
     password: zhaoCC33
     driver-class-name:  com.mysql.jdbc.Driver
+  redis:
+    #数据库索引
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password: zhaoCC33
+    #连接超时时间
+    timeout: 5000
