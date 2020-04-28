@@ -19,6 +19,7 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
 import z.coffee.blog.comm.annotation.AnonymousAccess;
 import z.coffee.blog.comm.auth.JwtAccessDeniedHandler;
 import z.coffee.blog.comm.auth.JwtAuthenticationEntryPoint;
+import z.coffee.blog.comm.auth.TokenConfigurer;
 import z.coffee.blog.comm.auth.TokenProvider;
 
 import java.util.HashSet;
@@ -95,6 +96,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 ).permitAll()
                 .antMatchers("/test").permitAll()
                 .antMatchers("/login").permitAll()
+                .antMatchers("/error").permitAll()
                 // swagger 文档
                 .antMatchers("/swagger-ui.html").permitAll()
                 .antMatchers("/swagger-resources/**").permitAll()

@@ -5,7 +5,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import z.coffee.blog.comm.vo.JwtUser;
 import z.coffee.blog.comm.vo.OnlineUser;
-import z.coffee.blog.config.SecurityProperties;
+import z.coffee.blog.comm.auth.SecurityProperties;
 import z.coffee.blog.utils.*;
 
 import javax.servlet.http.HttpServletRequest;

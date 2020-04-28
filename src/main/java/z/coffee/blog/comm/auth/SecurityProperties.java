@@ -1,4 +1,4 @@
-package z.coffee.blog.config;
+package z.coffee.blog.comm.auth;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

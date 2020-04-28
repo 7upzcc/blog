@@ -3,13 +3,14 @@ package z.coffee.blog.comm.auth;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
-import z.coffee.blog.config.SecurityProperties;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
 import java.security.Key;
@@ -18,6 +19,8 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.stream.Collectors;
 
+@Slf4j
+@Component
 public class TokenProvider  implements InitializingBean {
 
 

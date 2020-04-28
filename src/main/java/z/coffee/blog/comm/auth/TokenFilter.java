@@ -5,11 +5,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.GenericFilterBean;
-import z.coffee.blog.comm.auth.TokenProvider;
 import z.coffee.blog.comm.service.OnlineUserService;
 import z.coffee.blog.comm.spring.SpringContextHolder;
 import z.coffee.blog.comm.vo.OnlineUser;
-import z.coffee.blog.config.SecurityProperties;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
