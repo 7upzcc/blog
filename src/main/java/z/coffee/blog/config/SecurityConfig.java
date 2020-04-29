@@ -97,6 +97,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/test").permitAll()
                 .antMatchers("/login").permitAll()
                 .antMatchers("/error").permitAll()
+                .antMatchers("/getCode").permitAll()
                 // swagger 文档
                 .antMatchers("/swagger-ui.html").permitAll()
                 .antMatchers("/swagger-resources/**").permitAll()
@@ -112,7 +113,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // 自定义匿名访问所有url放行 ： 允许匿名和带权限以及登录用户访问
                 .antMatchers(anonymousUrls.toArray(new String[0])).permitAll()
                 // 所有请求都需要认证
-                .anyRequest().authenticated() ;
+                .anyRequest().authenticated()
+                .and().apply(securityConfigurerAdapter());
     }
 
     private TokenConfigurer securityConfigurerAdapter() {

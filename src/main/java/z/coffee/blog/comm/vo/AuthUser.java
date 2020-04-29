@@ -5,6 +5,9 @@ import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
 
+/**
+ * AuthUser类。该类用来接受登录页面的登录请求
+ */
 @Getter
 @Setter
 public class AuthUser {

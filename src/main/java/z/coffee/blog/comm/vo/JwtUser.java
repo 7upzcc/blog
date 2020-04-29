@@ -12,8 +12,8 @@ import java.util.Date;
 import java.util.stream.Collectors;
 
 /**
- * @author Zheng Jie
- * @date 2018-11-23
+ * JWT验证用的user类。
+ * 该类实现了UserDetails的接口。
  */
 @Getter
 @AllArgsConstructor

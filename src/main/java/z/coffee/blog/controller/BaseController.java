@@ -78,7 +78,7 @@ public class BaseController {
             throw new BadRequestException("验证码错误");
         }
         UsernamePasswordAuthenticationToken authenticationToken =
-                new UsernamePasswordAuthenticationToken(authUser.getUsername(), new BCryptPasswordEncoder().encode(password));
+                new UsernamePasswordAuthenticationToken(authUser.getUsername(), password);
 
         Authentication authentication = authenticationManagerBuilder.getObject().authenticate(authenticationToken);
         SecurityContextHolder.getContext().setAuthentication(authentication);
@@ -86,7 +86,7 @@ public class BaseController {
         String token = tokenProvider.createToken(authentication);
         final JwtUser jwtUser = (JwtUser) authentication.getPrincipal();
         // 保存在线信息
-        onlineUserService.save(jwtUser, token, request);
+        // onlineUserService.save(jwtUser, token, request);
         // 返回 token 与 用户信息
         Map<String,Object> authInfo = new HashMap<String,Object>(2){{
             put("token", properties.getTokenStartWith() + token);
