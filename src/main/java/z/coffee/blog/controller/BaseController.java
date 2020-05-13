@@ -86,7 +86,7 @@ public class BaseController {
         String token = tokenProvider.createToken(authentication);
         final JwtUser jwtUser = (JwtUser) authentication.getPrincipal();
         // 保存在线信息
-        // onlineUserService.save(jwtUser, token, request);
+        onlineUserService.save(jwtUser, token, request);
         // 返回 token 与 用户信息
         Map<String,Object> authInfo = new HashMap<String,Object>(2){{
             put("token", properties.getTokenStartWith() + token);
